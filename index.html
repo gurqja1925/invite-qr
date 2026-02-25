@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>寃고샎?앹옣 ?덈궡 - 硫붿씠?곗씠</title>
+  <title>결혼식장 안내 - 메이데이</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -17,7 +17,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ?? Header ?? */
+    /* ── Header ── */
     .header {
       text-align: center;
       padding: 48px 24px 36px;
@@ -43,7 +43,7 @@
       letter-spacing: 3px;
     }
 
-    /* ?? Divider ?? */
+    /* ── Divider ── */
     .divider {
       display: flex;
       align-items: center;
@@ -59,7 +59,7 @@
     }
     .divider span { font-size: 11px; color: #c49a6c; }
 
-    /* ?? Sections ?? */
+    /* ── Sections ── */
     .section { padding: 0 20px 24px; }
 
     .section-title {
@@ -70,7 +70,7 @@
       margin-bottom: 12px;
     }
 
-    /* ?? Address card ?? */
+    /* ── Address card ── */
     .address-card {
       background: #fff;
       border-radius: 14px;
@@ -89,7 +89,7 @@
       line-height: 1.7;
     }
 
-    /* ?? Map ?? */
+    /* ── Map ── */
     #map {
       width: 100%;
       height: 260px;
@@ -98,7 +98,7 @@
       box-shadow: 0 2px 12px rgba(0,0,0,0.10);
     }
 
-    /* ?? Nav buttons ?? */
+    /* ── Nav buttons ── */
     .nav-buttons {
       display: flex;
       gap: 10px;
@@ -126,7 +126,7 @@
     .nav-btn.tmap  { background: #2979FF; color: #fff; }
     .nav-btn .ico { font-size: 20px; }
 
-    /* ?? Parking cards ?? */
+    /* ── Parking cards ── */
     .parking-card {
       background: #fff;
       border-radius: 14px;
@@ -174,61 +174,63 @@
   <div class="header">
     <p class="label">Wedding Venue</p>
     <h1>MAYDAY</h1>
-    <p class="sub">硫붿씠?곗씠</p>
+    <p class="sub">메이데이</p>
   </div>
 
-  <div class="divider"><span>??/span></div>
+  <div class="divider"><span>✦</span></div>
 
   <!-- Address -->
   <div class="section">
-    <p class="section-title">?뱧 寃고샎?앹옣</p>
+    <p class="section-title">📍 결혼식장</p>
     <div class="address-card">
-      <p class="name">硫붿씠?곗씠 (MAYDAY)</p>
+      <p class="name">메이데이 (MAYDAY)</p>
       <p class="addr">
-        寃쎄린???ъ＜??媛?⑥쓭 ?紐낆궛湲?96<br>
-        (?쒗룊由?555)
+        경기도 여주시 가남읍 대명산길 96<br>
+        (태평리 555)
       </p>
     </div>
   </div>
 
   <!-- Map -->
   <div class="section">
-    <p class="section-title">?뿺 ?쎈룄</p>
+    <p class="section-title">🗺 약도</p>
     <div id="map"></div>
   </div>
 
   <!-- Navigation buttons -->
   <div class="section">
-    <p class="section-title">湲?李얘린</p>
+    <p class="section-title">길 찾기</p>
     <div class="nav-buttons">
       <button class="nav-btn kakao" onclick="openKakao()">
-        <span class="ico">?뿺</span>移댁뭅?ㅻ㏊
+        <span class="ico">🗺</span>카카오맵
       </button>
       <button class="nav-btn naver" onclick="openNaver()">
-        <span class="ico">?윟</span>?ㅼ씠踰꾩???      </button>
+        <span class="ico">🟢</span>네이버지도
+      </button>
       <button class="nav-btn tmap" onclick="openTmap()">
-        <span class="ico">?뵷</span>T 留?      </button>
+        <span class="ico">🔵</span>T 맵
+      </button>
     </div>
   </div>
 
   <!-- Parking -->
   <div class="section">
-    <p class="section-title">?끏 二쇱감 ?덈궡</p>
+    <p class="section-title">🅿 주차 안내</p>
 
     <div class="parking-card">
-      <span class="parking-badge">??1 二쇱감??/span>
-      <p class="p-name">硫붿씠?곗씠 ?꾩슜 二쇱감??/p>
-      <p class="p-desc">?앹옣 諛붾줈 ?놁뿉 ?꾩튂?섏뿬 ?대룞??媛???몃━?⑸땲??</p>
+      <span class="parking-badge">제 1 주차장</span>
+      <p class="p-name">메이데이 전용 주차장</p>
+      <p class="p-desc">식장 바로 옆에 위치하여 이동이 가장 편리합니다.</p>
     </div>
 
     <div class="parking-card">
-      <span class="parking-badge">??2 二쇱감??/span>
-      <p class="p-name">媛?⑥껜?↔났??二쇱감??/p>
+      <span class="parking-badge">제 2 주차장</span>
+      <p class="p-name">가남체육공원 주차장</p>
       <p class="p-desc">
-        硫붿씠?곗씠 二쇱감?μ씠 ?쇱옟??寃쎌슦 ?댁슜??二쇱꽭??<br>
-        ?꾨낫濡?媛源뚯슫 嫄곕━?낅땲??
+        메이데이 주차장이 혼잡할 경우 이용해 주세요.<br>
+        도보로 가까운 거리입니다.
       </p>
-      <span class="p-addr">?ъ＜??媛?⑥쓭 ?쒗룊由?535-1</span>
+      <span class="p-addr">여주시 가남읍 태평리 535-1</span>
     </div>
   </div>
 
@@ -236,9 +238,9 @@
   <script>
     const LAT  = 37.202457;
     const LNG  = 127.532967;
-    const NAME = '硫붿씠?곗씠';
+    const NAME = '메이데이';
 
-    /* ?? Naver Map ?? */
+    /* ── Naver Map ── */
     var map = new naver.maps.Map('map', {
       center: new naver.maps.LatLng(LAT, LNG),
       zoom: 16,
@@ -251,12 +253,12 @@
       map: map,
     });
     new naver.maps.InfoWindow({
-      content: '<div style="padding:8px 14px;font-size:13px;font-weight:700;color:#333;white-space:nowrap;">硫붿씠?곗씠 (MAYDAY)</div>',
+      content: '<div style="padding:8px 14px;font-size:13px;font-weight:700;color:#333;white-space:nowrap;">메이데이 (MAYDAY)</div>',
       borderColor: '#c49a6c',
       borderWidth: 1,
     }).open(map, marker);
 
-    /* ?? Navigation app links ?? */
+    /* ── Navigation app links ── */
     function openKakao() {
       window.open(
         'https://map.kakao.com/link/to/' + encodeURIComponent(NAME) + ',' + LAT + ',' + LNG,
