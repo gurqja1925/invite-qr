@@ -70,24 +70,20 @@
       margin-bottom: 12px;
     }
 
-    /* ── Address card ── */
-    .address-card {
+    /* ── Pin info ── */
+    .pin-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       background: #fff;
-      border-radius: 14px;
-      padding: 18px 20px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
-    .address-card .name {
-      font-size: 17px;
-      font-weight: 700;
-      color: #2c2c2c;
-      margin-bottom: 6px;
-    }
-    .address-card .addr {
-      font-size: 13px;
-      color: #777;
-      line-height: 1.7;
-    }
+    .pin-info .pin-ico { font-size: 22px; flex-shrink: 0; }
+    .pin-info .pin-name { font-size: 14px; font-weight: 700; color: #2c2c2c; }
+    .pin-info .pin-addr { font-size: 12px; color: #888; margin-top: 2px; }
 
     /* ── Map ── */
     #map {
@@ -124,7 +120,7 @@
     .nav-btn.kakao { background: #FEE500; color: #3C1E1E; }
     .nav-btn.naver { background: #03C75A; color: #fff; }
     .nav-btn.tmap  { background: #2979FF; color: #fff; }
-    .nav-btn .ico { font-size: 20px; }
+    .nav-btn img { width: 32px; height: 32px; border-radius: 8px; }
 
     /* ── Parking cards ── */
     .parking-card {
@@ -179,21 +175,15 @@
 
   <div class="divider"><span>✦</span></div>
 
-  <!-- Address -->
-  <div class="section">
-    <p class="section-title">📍 결혼식장</p>
-    <div class="address-card">
-      <p class="name">메이데이 (MAYDAY)</p>
-      <p class="addr">
-        경기도 여주시 가남읍 대명산길 96<br>
-        (태평리 555)
-      </p>
-    </div>
-  </div>
-
   <!-- Map -->
   <div class="section">
-    <p class="section-title">🗺 약도</p>
+    <div class="pin-info">
+      <span class="pin-ico">📍</span>
+      <div>
+        <p class="pin-name">메이데이 (MAYDAY)</p>
+        <p class="pin-addr">경기도 여주시 가남읍 대명산길 96 (태평리 555)</p>
+      </div>
+    </div>
     <div id="map"></div>
   </div>
 
@@ -202,13 +192,16 @@
     <p class="section-title">길 찾기</p>
     <div class="nav-buttons">
       <button class="nav-btn kakao" onclick="openKakao()">
-        <span class="ico">🗺</span>카카오맵
+        <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/be/32/8d/be328d2d-e385-de5f-33a6-bfd4bf4191bd/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg" alt="카카오맵">
+        카카오맵
       </button>
       <button class="nav-btn naver" onclick="openNaver()">
-        <span class="ico">🟢</span>네이버지도
+        <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f9/92/89/f99289ed-494b-c87f-88d3-5119a764e834/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg" alt="네이버지도">
+        네이버지도
       </button>
       <button class="nav-btn tmap" onclick="openTmap()">
-        <span class="ico">🔵</span>T 맵
+        <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/12/71/e0/1271e09c-28e7-bfae-8bc9-d93d9d0539b5/AppIcon-0-0-1x_U007emarketing-0-8-0-sRGB-85-220.png/512x512bb.jpg" alt="티맵">
+        T 맵
       </button>
     </div>
   </div>
@@ -248,15 +241,6 @@
       scaleControl: false,
       mapDataControl: false,
     });
-    var marker = new naver.maps.Marker({
-      position: new naver.maps.LatLng(LAT, LNG),
-      map: map,
-    });
-    new naver.maps.InfoWindow({
-      content: '<div style="padding:8px 14px;font-size:13px;font-weight:700;color:#333;white-space:nowrap;">메이데이 (MAYDAY)</div>',
-      borderColor: '#c49a6c',
-      borderWidth: 1,
-    }).open(map, marker);
 
     /* ── Navigation app links ── */
     function openKakao() {
