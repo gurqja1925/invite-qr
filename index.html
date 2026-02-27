@@ -92,6 +92,19 @@
       border-radius: 14px;
       overflow: hidden;
       box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+      margin-bottom: 12px;
+    }
+
+    /* ── Map marker label ── */
+    .map-marker-label {
+      background: #c49a6c;
+      color: #fff;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
     }
 
     /* ── Nav buttons ── */
@@ -162,6 +175,39 @@
       padding: 3px 10px;
       border-radius: 6px;
     }
+
+    /* ── Invitation link ── */
+    .invitation-section {
+      padding: 8px 20px 48px;
+      text-align: center;
+    }
+    .invitation-label {
+      font-size: 11px;
+      color: #aaa;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .invitation-btn {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #c49a6c, #a87d52);
+      color: #fff;
+      border: none;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(196,154,108,0.35);
+      text-decoration: none;
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+      font-family: inherit;
+    }
+    .invitation-btn:active {
+      transform: scale(0.97);
+      box-shadow: 0 2px 8px rgba(196,154,108,0.25);
+    }
   </style>
 </head>
 <body>
@@ -189,7 +235,7 @@
 
   <!-- Navigation buttons -->
   <div class="section">
-    <p class="section-title">길 찾기</p>
+    <p class="section-title">🧭 길 찾기</p>
     <div class="nav-buttons">
       <button class="nav-btn kakao" onclick="openKakao()">
         <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/be/32/8d/be328d2d-e385-de5f-33a6-bfd4bf4191bd/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg" alt="카카오맵">
@@ -227,6 +273,14 @@
     </div>
   </div>
 
+  <!-- Invitation link -->
+  <div class="invitation-section">
+    <p class="invitation-label">모바일 청첩장 보기</p>
+    <a class="invitation-btn" href="https://wedding.gurqja.kro.kr/classic" target="_blank">
+      💌 청첩장으로 이동
+    </a>
+  </div>
+
   <script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=5rph4jr49o"></script>
   <script>
     const LAT  = 37.202457;
@@ -240,6 +294,15 @@
       mapTypeControl: false,
       scaleControl: false,
       mapDataControl: false,
+    });
+
+    var marker = new naver.maps.Marker({
+      position: new naver.maps.LatLng(LAT, LNG),
+      map: map,
+      icon: {
+        content: '<div class="map-marker-label">📍 메이데이</div>',
+        anchor: new naver.maps.Point(52, 28)
+      }
     });
 
     /* ── Navigation app links ── */
